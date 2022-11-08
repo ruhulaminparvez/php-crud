@@ -36,13 +36,14 @@
             <?php 
               $query = "SELECT * FROM `usertable`";
               $query_run = mysqli_query($con, $query);
+              $serial = 1;
               if(mysqli_num_rows($query_run) > 0)
               {
                 while($row = mysqli_fetch_assoc($query_run))
                 {
                   ?>
                   <tr>
-                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $serial++ ?></td>
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['phone']; ?></td>
